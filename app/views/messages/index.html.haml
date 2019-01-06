@@ -1,0 +1,82 @@
+= render partial: "notification"
+
+.wrapper
+
+  //左側
+  .side
+    .side__user
+      .side__user-content
+        .side__user-content-name
+          aki miyagawa
+        .side__user-content-actions
+          = link_to root_path do
+            %i.fa.fa-pencil-square-o
+          = link_to root_path do
+            %i.fa.fa-cog
+    .side__group
+      = link_to root_path do
+        .side__group-content
+          %p.side__group-content-name
+            test01グループ
+          %p.side__group-content-message
+            まだメッセージはありません
+      = link_to root_path do
+        .side__group-content
+          %p.side__group-content-name
+            test02グループ
+          %p.side__group-content-message
+            まだメッセージはありません
+      = link_to root_path do
+        .side__group-content
+          %p.side__group-content-name
+            test03グループ
+          %p.side__group-content-message
+            まだメッセージはありません
+
+  //右側
+  .main
+    .main__header
+      .main__header--group
+        .main__header--group-name
+          test01グループ
+        .main__header--group-members
+          Members: aki miyagawa
+      = link_to root_path do
+        .btn-edit
+          Edit
+
+    .main__content
+      .main__content__list
+        .main__content__message
+          .main__content__message-name
+            aki miyagawa
+          .main__content__message-time
+            2019/01/06 09:00:00
+          .main__content__message-text
+            なるほど
+
+      .main__content__list
+        .main__content__message
+          .main__content__message-name
+            aki miyagawa
+          .main__content__message-time
+            2019/01/06 09:00:00
+          .main__content__message-text
+            なるほど
+
+      .main__content__list
+        .main__content__message
+          .main__content__message-name
+            aki miyagawa
+          .main__content__message-time
+            2019/01/06 09:00:00
+          .main__content__message-text
+            なるほど
+
+    .main__footer
+      %form.main__footer__form
+        %input.message{type: "text", placeholder: "type a message"}
+        %label{for: "message-image"}
+          %input.image{type: "file", accept: "image/*", id: "message-image"}
+          %i.fa.fa-picture-o
+        %input.submit{type: "submit", value: "Send"}
