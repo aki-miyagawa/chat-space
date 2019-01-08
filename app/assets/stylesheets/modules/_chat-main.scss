@@ -12,7 +12,7 @@
     width: 100%;
     height: 15%;
     background-color: $white;
-    border-bottom: solid 1px $border-color;
+    border-bottom: solid 1px $border_color;
     padding: 0 40px;
     display: flex;
     justify-content: space-between;
@@ -28,7 +28,7 @@
 
       &-members {
         font-size: 12px;
-        color: $silver-gray;
+        color: $light_gray;
       }
     }
 
@@ -38,8 +38,8 @@
       text-decoration: none;
 
       .btn-edit {
-        color: $light-blue;
-        border: solid 2px $light-blue;
+        color: $light_blue;
+        border: solid 2px $light_blue;
         padding: 10px 20px;
         font-size: 14px;
       }
@@ -51,7 +51,7 @@
     width: 100%;
     height: calc(100vh - 15% - 90px);
     padding: 0 40px;
-    background-color: $pearl-white;
+    background-color: $pearl_white;
 
     &__list {
       position: relative;
@@ -67,18 +67,18 @@
         margin: 0 10px 10px 0;
         font-size: 16px;
         font-weight: bold;
-        color: $thin-black;
+        color: $thin_black;
       }
 
       &-time {
         display: inline-block;
         font-size: 12px;
-        color: $silver-gray;
+        color: $light_gray;
       }
 
       &-text {
         font-size: 14px;
-        color: $thin-black;
+        color: $thin_black;
       }
     }
   }
@@ -88,7 +88,7 @@
     height: 90px;
     width: 100%;
     padding: 20px 40px;
-    background-color: $pearl-gray;
+    background-color: $pearl_gray;
 
     &__form {
       position: relative;
@@ -100,7 +100,7 @@
 
         &::placeholder {
           padding-left: 10px;
-          color: $thin-black;
+          color: $thin_black;
           font-size: 16px;
         }
       }
@@ -129,7 +129,7 @@
         width: 100px;
         height: 50px;
         margin-left: 15px;
-        background-color: $light-blue;
+        background-color: $light_blue;
         color: $white;
         border: none;
 

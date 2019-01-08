@@ -1,35 +1,6 @@
 .wrapper
-
   //左側
-  .side
-    .side__user
-      .side__user-content
-        .side__user-content-name
-          = current_user.name
-        .side__user-content-actions
-          = link_to root_path do
-            %i.fa.fa-pencil-square-o
-          = link_to edit_user_path(current_user) do
-            %i.fa.fa-cog
-    .side__group
-      = link_to root_path do
-        .side__group-content
-          %p.side__group-content-name
-            test01グループ
-          %p.side__group-content-message
-            まだメッセージはありません
-      = link_to root_path do
-        .side__group-content
-          %p.side__group-content-name
-            test02グループ
-          %p.side__group-content-message
-            まだメッセージはありません
-      = link_to root_path do
-        .side__group-content
-          %p.side__group-content-name
-            test03グループ
-          %p.side__group-content-message
-            まだメッセージはありません
+  = render 'shared/side_bar'
 
   //右側
   .main
