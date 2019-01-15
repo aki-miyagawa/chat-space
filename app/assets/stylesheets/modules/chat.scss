@@ -25,7 +25,7 @@
       }
     }
     .right-header {
-      border: 1px solid $light_blue;
+      border: 2px solid $light_blue;
       color: $light_blue;
       float: right;
       height: 40px;
@@ -34,6 +34,8 @@
       padding: 0 20px;
       &__button {
         color: $light_blue;
+      }
+      a {
         text-decoration: none;
       }
     }
