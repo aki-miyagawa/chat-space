@@ -42,59 +42,7 @@
   }
 
 //footer部分
-  &__footer {
-    height: 90px;
-    width: 100%;
-    padding: 20px 40px;
-    background-color: $pearl_gray;
 
-    &__form {
-      position: relative;
-      input.message {
-        float: left;
-        width: calc(100% - 115px);
-        height: 50px;
-        border: none;
-
-        &::placeholder {
-          padding-left: 10px;
-          color: $thin_black;
-          font-size: 16px;
-        }
-      }
-
-      label {
-        position: absolute;
-        top: 0;
-        left: calc(100% - 145px);
-        display: inline-block;
-        width: 20px;
-        height: 50px;
-        margin: 0;
-        padding-right: 10px;
-
-        input.image {
-          display: none;
-        }
-
-        i.fa {
-          line-height: 50px;
-        }
-      }
-
-      input.submit {
-        float: right;
-        width: 100px;
-        height: 50px;
-        margin-left: 15px;
-        background-color: $light_blue;
-        color: $white;
-        border: none;
-
-      }
-    }
-  }
-//ここ以下はを入れ替えないといけない
   .form {
     background-color: #DDDDDD;
     box-sizing: border-box;

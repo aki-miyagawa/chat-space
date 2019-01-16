@@ -8,12 +8,3 @@
       = render 'header'
 
     .messages
-      = render 'message'
-
-    .chat__footer
-      %form.chat__footer__form
-        %input.message{type: "text", placeholder: "type a message"}
-        %label{for: "message-image"}
-          %input.image{type: "file", accept: "image/*", id: "message-image"}
-          %i.fa.fa-picture-o
-        %input.submit{type: "submit", value: "Send"}
