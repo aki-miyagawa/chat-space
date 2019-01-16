@@ -1,0 +1,29 @@
+.messages {
+  background-color: $pearl_white;
+  box-sizing: border-box;
+  padding: 46px 40px 0;
+  height: calc(100% - 100px - 90px);
+  .message {
+    .upper-message {
+      display: flex;
+      &__user-name {
+        color: $thin_black;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &__date {
+        color: $light_gray;
+        font-size: 12px;
+        padding-left: 10px;
+      }
+    }
+    .lower-message {
+      margin-top: 10px;
+      &__content {
+        color: $thin_black;
+        font-size: 14px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}

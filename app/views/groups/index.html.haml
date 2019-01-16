@@ -3,49 +3,8 @@
   = render 'shared/side_bar'
 
   //右側
-  .main
-    .main__header
-      .main__header--group
-        .main__header--group-name
-          test01グループ
-        .main__header--group-members
-          Members: aki miyagawa
-      = link_to edit_group_path(current_user) do
-        .btn-edit
-          Edit
+  .chat
+    .header
+      = render 'header'
 
-    .main__content
-      .main__content__list
-        .main__content__message
-          .main__content__message-name
-            aki miyagawa
-          .main__content__message-time
-            2019/01/06 09:00:00
-          .main__content__message-text
-            なるほど
-
-      .main__content__list
-        .main__content__message
-          .main__content__message-name
-            aki miyagawa
-          .main__content__message-time
-            2019/01/06 09:00:00
-          .main__content__message-text
-            なるほど
-
-      .main__content__list
-        .main__content__message
-          .main__content__message-name
-            aki miyagawa
-          .main__content__message-time
-            2019/01/06 09:00:00
-          .main__content__message-text
-            なるほど
-
-    .main__footer
-      %form.main__footer__form
-        %input.message{type: "text", placeholder: "type a message"}
-        %label{for: "message-image"}
-          %input.image{type: "file", accept: "image/*", id: "message-image"}
-          %i.fa.fa-picture-o
-        %input.submit{type: "submit", value: "Send"}
+    .messages
