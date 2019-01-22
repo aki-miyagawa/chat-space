@@ -5,19 +5,21 @@ $(function(){
     if (message.image) {
       imagePresent = `<img class="lower-message__image" src=${message.image}>`
     }
-    var html = `<div class="message">
-                  <div class="upper-message>
-                    <div class="upper-message__user-name">
-                      ${message.name}
+    var html = `<div class="messages">
+                  <div class="message">
+                    <div class="upper-message>
+                      <div class="upper-message__user-name">
+                        ${message.name}
+                      </div>
+                      <div class="upper-message__date">
+                        ${message.created_at}
+                      </div>
                     </div>
-                    <div class="upper-message__date">
-                      ${message.created_at}
-                    </div>
-                  </div>
-                  <div class="lower-message">
-                    <div class="lower-message__content">
-                    ${message.content}
-                    ${imagePresent}
+                    <div class="lower-message">
+                      <div class="lower-message__content">
+                      ${message.content}
+                      ${imagePresent}
+                      </div>
                     </div>
                   </div>
                 </div>`
