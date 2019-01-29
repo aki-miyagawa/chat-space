@@ -1,6 +1,7 @@
 .chat {
   width: calc(100vw - 300px);
-
+  float: right;
+  height: 100vh;
 //header部分
   .header {
     box-sizing: border-box;
@@ -41,41 +42,102 @@
     }
   }
 
+//chat部分
+  .messages {
+    width: 100%;
+    height: calc(100vh - 15% - 90px);
+    background-color: $pearl_white;
+    box-sizing: border-box;
+    padding: 0 40px;
+    overflow-y: scroll;
+  }
+
+  .message {
+    position: relative;
+    top: 26px;
+
+  .upper-message {
+    padding: 20px 0;
+    width: 40%;
+
+      &__user-name {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: $thin_black;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      &__date {
+        display: inline-block;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        color: $light_gray;
+        font-size: 12px;
+        float: right;
+      }
+
+      &__content{
+        color: $thin_black;
+        font-size: 14px;
+      }
+    }
+  }
+
+
 //footer部分
 
-  .form {
-    background-color: #DDDDDD;
+  .footer {
     box-sizing: border-box;
+    padding: 20px 40px;
+    width: 100%;
     height: 90px;
-    padding: 20px 50px 20px 40px;
-    &__message {
-      border: none;
-      float: left;
-      height: 50px;
-      width: calc(100% - 150px);
-    }
-    &__mask {
-      background-color: $white;
-      float: left;
-      height: 50px;
-      padding-right: 10px;
-      &__image {
-        font-size: 20px;
-        line-height: 50px;
+    background-color: #AAAAAA;
+
+    .footer__form {
+      position: relative;
+
+      .form__message {
+        float: left;
+        width: calc(100% - 115px);
+        height: 50px;
+        border: none;
+
+          &::placeholder{
+            padding-left: 10px;
+            color: $thin_black;
+            font-size: 16px;
+          }
       }
-      .hidden {
-        display: none;
+
+      .form__image {
+        position: absolute;
+        top: 0;
+        left: calc(100% - 145px);
+        display: inline-block;
+        width: 20px;
+        height: 50px;
+        margin: 0;
+        padding-right: 10px;
+
+          .image {
+            display: none;
+          }
+
+          .icon {
+            line-height: 50px;
+          }
       }
-    }
-    &__submit {
-      background-color: $light_blue;
-      border: none;
-      color: $white;
-      float: right;
-      font-size: 16px;
-      height: 50px;
-      margin-left: 15px;
-      padding: 0 30px;
+
+      .form__submit {
+        float: right;
+        width: 100px;
+        height: 50px;
+        margin-left: 15px;
+        border: none;
+        background-color: $light_blue;
+        color: $white;
+      }
     }
   }
 }
