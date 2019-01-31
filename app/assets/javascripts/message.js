@@ -1,4 +1,5 @@
 $(function(){
+  var $messages = $(".messages")
   function buildHTML(message){
     var image = (message.image === null) ? "" : `<img src="${message.image}" class="lower-message__image">`
     var html = `<div class="upper-message" data-message-id="${message.id}">
@@ -22,7 +23,6 @@ $(function(){
     var formData = new FormData(this);
     var url  = $(this).attr('action');
     var form = $(this);
-
     $.ajax({
       url:         url,
       type:        "POST",
@@ -36,7 +36,7 @@ $(function(){
       var html = buildHTML(data);
       $(".message").append(html)
       form[0].reset()
-      $(".messages").animate({scrollTop: $(".messages")[0].scrollHeight}, 'fast');
+      $messages.animate({scrollTop: $messages[0].scrollHeight}, 'fast');
     })
 
     .fail(function(){
@@ -61,7 +61,7 @@ $(function(){
         messages.forEach(function(message){
          $(".message").append(buildHTML(message));
          });
-         $(".messages").animate({scrollTop: $(".messages")[0].scrollHeight}, 'fast');
+         $messages.animate({scrollTop: $messages[0].scrollHeight}, 'fast');
       })
       .fail(function(data){
         alert('自動更新に失敗しました')
