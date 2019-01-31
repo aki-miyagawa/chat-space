@@ -1,5 +1,8 @@
 $(function(){
-  var $messages = $(".messages")
+  var $message = ".message";
+  var $messages = ".messages";
+  var $form__submit = ".form__submit";
+
   function buildHTML(message){
     var image = (message.image === null) ? "" : `<img src="${message.image}" class="lower-message__image">`
     var html = `<div class="upper-message" data-message-id="${message.id}">
@@ -34,9 +37,9 @@ $(function(){
 
     .done(function(data){
       var html = buildHTML(data);
-      $(".message").append(html)
+      $($message).append(html)
       form[0].reset()
-      $messages.animate({scrollTop: $messages[0].scrollHeight}, 'fast');
+      $($messages).animate({scrollTop: $($messages)[0].scrollHeight}, 'fast');
     })
 
     .fail(function(){
@@ -44,7 +47,7 @@ $(function(){
     })
 
     .always(function() {
-      $(".form__submit").prop('disabled', false)
+      $($form__submit).prop('disabled', false)
     })
   });
 
@@ -59,9 +62,9 @@ $(function(){
       })
       .done(function(messages){
         messages.forEach(function(message){
-         $(".message").append(buildHTML(message));
+         $($message).append(buildHTML(message));
          });
-         $messages.animate({scrollTop: $messages[0].scrollHeight}, 'fast');
+         $($messages).animate({scrollTop: $($messages)[0].scrollHeight}, 'fast');
       })
       .fail(function(data){
         alert('自動更新に失敗しました')
