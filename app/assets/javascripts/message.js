@@ -51,12 +51,12 @@ $(function(){
 
   var interval = setInterval(function(){
     if(window.location.href.match(/\/groups\/\d+\/messages/)){
-      var id = $('.upper-message:last').data('message-id')
+      var last_message_id = $('.upper-message:last').data('message-id')
       $.ajax({
         url: location.href,
         type: 'GET',
         dataType: 'json',
-        data: {id: id}
+        data: {id: last_message_id}
       })
       .done(function(messages){
         messages.forEach(function(message){
