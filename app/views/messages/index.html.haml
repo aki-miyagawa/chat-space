@@ -13,16 +13,14 @@
         = link_to edit_group_path(@group) do
           .right-header__button Edit
     .messages
-      = render @messages   #省略形
+      .message
+        = render @messages   #省略形
 
-    .form
-      = form_for [@group, @message] ,html: {class: 'new_message_form'} do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-        .form__mask
-          = f.label :image, class: 'form__mask__image' do
-            = fa_icon 'picture-o', class: 'icon'
-            = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
-
-  // Full_Vertion
-  //  = render partial: 'message', collection: @message
+    .footer
+      .footer__form
+        = form_for [@group, @message], html: {id: 'new_message'} do |f|
+          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+          = f.label :image, class: 'form__image' do
+            = f.file_field :image, class: 'image'
+            = fa_icon 'picture-o', class:'icon'
+          = f.submit 'Send', class: 'form__submit'
