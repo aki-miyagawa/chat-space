@@ -1,7 +1,5 @@
 $(function(){
-  var $message = ".message";
   var $messages = ".messages";
-  var $form__submit = ".form__submit";
 
   function buildHTML(message){
     var image = (message.image === null) ? "" : `<img src="${message.image}" class="lower-message__image">`
@@ -25,7 +23,7 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url  = $(this).attr('action');
-    var form = $(this);
+    var $form = $(this);
     $.ajax({
       url:         url,
       type:        "POST",
@@ -37,8 +35,8 @@ $(function(){
 
     .done(function(data){
       var html = buildHTML(data);
-      $($message).append(html)
-      form[0].reset()
+      $(".message").append(html)
+      $form[0].reset()
       $($messages).animate({scrollTop: $($messages)[0].scrollHeight}, 'fast');
     })
 
@@ -47,7 +45,7 @@ $(function(){
     })
 
     .always(function() {
-      $($form__submit).prop('disabled', false)
+      $(".form__submit").prop('disabled', false)
     })
   });
 
@@ -62,7 +60,7 @@ $(function(){
       })
       .done(function(messages){
         messages.forEach(function(message){
-         $($message).append(buildHTML(message));
+         $(".message").append(buildHTML(".message"));
          });
          $($messages).animate({scrollTop: $($messages)[0].scrollHeight}, 'fast');
       })
