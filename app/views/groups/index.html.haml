@@ -8,3 +8,14 @@
       = render 'header'
 
     .messages
+      .message
+        = render 'shared/message'
+
+    .footer
+      .footer__form
+        = form_for [@group, @message], html: {id: 'new_message'} do |f|
+          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+          = f.label :image, class: 'form__image' do
+            = f.file_field :image, class: 'image'
+            = fa_icon 'picture-o', class:'icon'
+          = f.submit 'Send', class: 'form__submit'
